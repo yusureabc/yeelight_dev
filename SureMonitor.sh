@@ -1,6 +1,8 @@
 #! /bin/bash
 # Author Yusure
+# Blog http://yusure.cn
 
+# Notice: Please open LAN Control #
 # Device(Bulb) IP address and port #
 IP="192.168.10.42"
 PORT="55443"
@@ -32,14 +34,11 @@ while true
 do
     for i in `seq 0 $((${#WEB_URL[*]}-1))`
     do
-        # echo ${i}
-        # echo ${WEB_URL[${i}]}
         http_code=`curl -o /dev/null -s -m 10 --connect-timeout 10 -w %{http_code} ${WEB_URL[${i}]}`
         if [ ${http_code} != "200" ]
         then
-            ColorFlow=${COLOR[$i]}
+            # Get ColorFlow #
             ColorFlow=`eval echo '$'${COLOR[$i]}`
-            # echo ${ColorFlow}
             echo ${ColorFlow} | telnet ${IP} ${PORT}
             # Waiting... #
             sleep 3
