@@ -14,7 +14,7 @@ WEB_URL[2]='http://yusure.cn/test/2.php'
 WEB_URL[3]='http://yusure.cn/test/3.php'
 WEB_URL[4]='http://yusure.cn/test/4.php'
 
-# Color Settings #
+# Color Settings ( If your bulb not supported color, please use "White" ) #
 COLOR[0]=White
 COLOR[1]=Red
 COLOR[2]=Green
